@@ -1,0 +1,5 @@
+{
+  "name": "MERN-Style Blog Application",
+  "description": "A full-featured blog application frontend designed for a MERN stack architecture, featuring authentication, CRUD operations, commenting, and AI-assisted content generation.",
+  "requestFramePermissions": []
+}

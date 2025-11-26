@@ -1,78 +1,91 @@
-# MERN Stack Integration Assignment
+# MERN Stack Blog Application
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+## Project Overview
 
-## Assignment Overview
+This is a comprehensive full-stack web application designed to demonstrate the integration of MongoDB, Express.js, React.js, and Node.js (MERN). The application allows users to view blog posts, register/login, create and edit their own posts, and comment on discussions. 
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+> **Note:** This repository contains the **Client (Frontend)** implementation. For demonstration purposes within this environment, the backend API calls are simulated using local storage and mocked promises, but the structure is designed to swap easily to a real Express/Mongo backend.
 
-## Project Structure
+### Features Implemented
+*   **Authentication:** User registration and login simulation with JWT-style token management.
+*   **CRUD Operations:** Full Create, Read, Update, and Delete capabilities for blog posts.
+*   **Interactive UI:** Modern, responsive design using Tailwind CSS.
+*   **Rich Interactions:** Commenting system on posts.
+*   **AI Integration:** "Write for Me" feature using Google Gemini API to generate blog content automatically.
+*   **State Management:** React Context API for authentication and global state.
+*   **Routing:** Client-side routing for seamless navigation.
 
-```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+---
 
-## Getting Started
+## Setup Instructions
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+### Prerequisites
+*   Node.js (v18 or higher)
+*   npm or yarn
 
-## Files Included
+### Installation
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/mern-blog.git
+    cd mern-blog
+    ```
 
-## Requirements
+2.  **Install Client Dependencies:**
+    ```bash
+    npm install
+    ```
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+3.  **Environment Configuration:**
+    Create a `.env` file in the root directory:
+    ```env
+    # For the AI Content Generation feature
+    REACT_APP_GEMINI_API_KEY=your_gemini_api_key_here
+    ```
 
-## Submission
+4.  **Start the Application:**
+    ```bash
+    npm start
+    ```
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+---
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+## API Documentation
 
-## Resources
+The frontend is designed to consume the following RESTful endpoints. 
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+### Posts
+
+| Method | Endpoint | Description | Access |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/posts` | Retrieve all blog posts (supports pagination) | Public |
+| `GET` | `/api/posts/:id` | Retrieve a single post by ID | Public |
+| `POST` | `/api/posts` | Create a new blog post | Private |
+| `PUT` | `/api/posts/:id` | Update an existing post | Private (Owner) |
+| `DELETE` | `/api/posts/:id` | Delete a post | Private (Owner) |
+
+### Categories
+
+| Method | Endpoint | Description | Access |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/categories` | Get all available categories | Public |
+| `POST` | `/api/categories` | Create a new category | Private |
+
+### Authentication
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/auth/register` | Register a new user |
+| `POST` | `/api/auth/login` | Authenticate user and receive token |
+| `GET` | `/api/auth/me` | Get current user profile |
+
+---
+
+## Tech Stack
+
+*   **Frontend:** React 18, TypeScript, Tailwind CSS, Vite
+*   **State Management:** React Context API, React Hooks
+*   **Routing:** React Router (HashRouter used for demo)
+*   **AI:** Google Gemini API (@google/genai)
+*   **Icons:** Lucide React
+![alt text](<Screenshot (61).png>) ![alt text](<Screenshot (62).png>) ![alt text](<Screenshot (63).png>)
