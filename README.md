@@ -1,91 +1,102 @@
-# MERN Stack Blog Application
+📘 MERN Stack Blog Application
+Project Overview
 
-## Project Overview
+This is a comprehensive full-stack web application designed to demonstrate the integration of MongoDB, Express.js, React.js, and Node.js (MERN). The application allows users to view blog posts, register/login, create and edit their own posts, and participate in discussions through comments.
 
-This is a comprehensive full-stack web application designed to demonstrate the integration of MongoDB, Express.js, React.js, and Node.js (MERN). The application allows users to view blog posts, register/login, create and edit their own posts, and comment on discussions. 
+Note: This repository contains the Client (Frontend) implementation.
+Backend API calls are currently simulated using local storage and mocked promises, but the structure supports easy migration to a full Express + MongoDB backend.
 
-> **Note:** This repository contains the **Client (Frontend)** implementation. For demonstration purposes within this environment, the backend API calls are simulated using local storage and mocked promises, but the structure is designed to swap easily to a real Express/Mongo backend.
+🖼️ Project Screenshots
 
-### Features Implemented
-*   **Authentication:** User registration and login simulation with JWT-style token management.
-*   **CRUD Operations:** Full Create, Read, Update, and Delete capabilities for blog posts.
-*   **Interactive UI:** Modern, responsive design using Tailwind CSS.
-*   **Rich Interactions:** Commenting system on posts.
-*   **AI Integration:** "Write for Me" feature using Google Gemini API to generate blog content automatically.
-*   **State Management:** React Context API for authentication and global state.
-*   **Routing:** Client-side routing for seamless navigation.
+<img width="1268" height="655" alt="Screenshot (61)" src="https://github.com/user-attachments/assets/6f230654-7b9d-40ac-8e9e-9bc61cbc5326" />
 
----
 
-## Setup Instructions
+🔹 Home Page
 
-### Prerequisites
-*   Node.js (v18 or higher)
-*   npm or yarn
+🔹 Post Creation Page
 
-### Installation
+🔹 Blog Post View
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/mern-blog.git
-    cd mern-blog
-    ```
+🔹 User Authentication (Login / Register)
 
-2.  **Install Client Dependencies:**
-    ```bash
-    npm install
-    ```
+🔹 AI "Write for Me" Feature
 
-3.  **Environment Configuration:**
-    Create a `.env` file in the root directory:
-    ```env
-    # For the AI Content Generation feature
-    REACT_APP_GEMINI_API_KEY=your_gemini_api_key_here
-    ```
+✨ Features Implemented
 
-4.  **Start the Application:**
-    ```bash
-    npm start
-    ```
+Authentication
+User registration and login simulation using a JWT-style token.
 
----
+CRUD Operations
+Create, Read, Update, and Delete blog posts.
 
-## API Documentation
+Interactive UI
+Built with Tailwind CSS for a modern, responsive UI.
 
-The frontend is designed to consume the following RESTful endpoints. 
+Comments System
+Users can comment and engage with content.
 
-### Posts
+AI Content Generation
+"Write for Me" using the Google Gemini API.
 
-| Method | Endpoint | Description | Access |
-| :--- | :--- | :--- | :--- |
-| `GET` | `/api/posts` | Retrieve all blog posts (supports pagination) | Public |
-| `GET` | `/api/posts/:id` | Retrieve a single post by ID | Public |
-| `POST` | `/api/posts` | Create a new blog post | Private |
-| `PUT` | `/api/posts/:id` | Update an existing post | Private (Owner) |
-| `DELETE` | `/api/posts/:id` | Delete a post | Private (Owner) |
+Global State
+Managed with React Context API.
 
-### Categories
+Client-Side Routing
+Smooth navigation with React Router.
 
-| Method | Endpoint | Description | Access |
-| :--- | :--- | :--- | :--- |
-| `GET` | `/api/categories` | Get all available categories | Public |
-| `POST` | `/api/categories` | Create a new category | Private |
+⚙️ Setup Instructions
+Prerequisites
 
-### Authentication
+Node.js v18+
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/api/auth/register` | Register a new user |
-| `POST` | `/api/auth/login` | Authenticate user and receive token |
-| `GET` | `/api/auth/me` | Get current user profile |
+npm or yarn
 
----
+Installation
+1️⃣ Clone the repository
+git clone https://github.com/yourusername/mern-blog.git
+cd mern-blog
 
-## Tech Stack
+2️⃣ Install dependencies
+npm install
 
-*   **Frontend:** React 18, TypeScript, Tailwind CSS, Vite
-*   **State Management:** React Context API, React Hooks
-*   **Routing:** React Router (HashRouter used for demo)
-*   **AI:** Google Gemini API (@google/genai)
-*   **Icons:** Lucide React
-![alt text](<Screenshot (61).png>) ![alt text](<Screenshot (62).png>) ![alt text](<Screenshot (63).png>)
+3️⃣ Configure environment variables
+
+Create a .env file:
+
+# For the AI Content Generation feature
+REACT_APP_GEMINI_API_KEY=your_gemini_api_key_here
+
+4️⃣ Start the application
+npm start
+
+📡 API Documentation
+
+The frontend is structured to consume the following REST API endpoints:
+
+📝 Posts
+Method	Endpoint	Description	Access
+GET	/api/posts	Get all blog posts	Public
+GET	/api/posts/:id	Get post by ID	Public
+POST	/api/posts	Create new post	Private
+PUT	/api/posts/:id	Update post	Private
+DELETE	/api/posts/:id	Delete post	Private
+🏷️ Categories
+Method	Endpoint	Description	Access
+GET	/api/categories	Get all categories	Public
+POST	/api/categories	Create category	Private
+🔒 Authentication
+Method	Endpoint	Description
+POST	/api/auth/register	Register new user
+POST	/api/auth/login	Login and receive token
+GET	/api/auth/me	Get logged-in user data
+🛠️ Tech Stack
+
+Frontend: React 18, TypeScript, Vite, Tailwind CSS
+
+State Management: React Context API
+
+Routing: React Router (HashRouter for demo)
+
+AI Integration: Google Gemini API
+
+Icons: Lucide React
